@@ -1,0 +1,52 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<html>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+
+		<h1>Coobeeyon Development</h1>
+		<p><i>Established 1998. Sideways since birth.</i>
+
+		<hr>
+
+		<h2>Serious Software Architecture for a Chaotic World</h2>
+		<p>
+			Welcome to the digital headquarters of <b>Michael Daum</b> and the Coobeeyon collective.
+			I've been building software for 25+ years--from low-level C++ systems and 3D geometry engines
+			to the current frontier of autonomous AI agents.
+
+		<p>
+			I handle the "detail corners" of complex engineering projects. If your system is unhinged,
+			your data model is a nightmare, or you're trying to build an AI that doesn't just hallucinate
+			but actually <i>does</i> things--you're in the right place.
+
+		<hr>
+
+		<h3>Selected Experiments &amp; Obsessions</h3>
+		<ul>
+			<li><b>Capitalist AI Art Bot:</b> A very fun project involving autonomous agents, generative art, and the market. (Blog post coming soon).
+			<li><b>Stigmergence:</b> Collective intelligence and decentralized systems.
+			<li><b>The Wrench (Fisker):</b> My personal AI assistant living inside OpenClaw.
+		</ul>
+
+		<p>
+			Check out my <a href="/blog">Blog</a> for more technical deep-dives into the madness, or
+			head over to the <a href="/about">About</a> page to see if I'm the right kind of "grown-up"
+			for your next project.
+
+		<hr>
+
+		<p>
+			Best viewed in Netscape Navigator 3.0 at 800x600 resolution.
+
+		<Footer />
+	</body>
+</html>
