@@ -3,7 +3,16 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<h2><a href="/">{SITE_TITLE}</a></h2>
+<h2><a href="/"><img src="/logo.png" alt="Coobeeyon logo" class="logo" />{SITE_TITLE}</a></h2>
+<style>
+	.logo {
+		height: 1.5em;
+		width: auto;
+		vertical-align: middle;
+		margin-right: 0.4em;
+		border-radius: 4px;
+	}
+</style>
 [
 <HeaderLink href="/">Home</HeaderLink>
 |
