@@ -5,14 +5,25 @@ const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
 	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		// Transform string to Date object
-		pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
-		heroImage: z.string().optional(),
-	}),
+	schema: z
+		.object({
+			title: z.string(),
+			description: z.string(),
+			// Transform string to Date object
+			pubDate: z.coerce.date(),
+			updatedDate: z.coerce.date().optional(),
+			heroImage: z.string().optional(),
+			heroImageAlt: z.string().min(1).optional(),
+		})
+		.superRefine((post, context) => {
+			if (post.heroImage && !post.heroImageAlt) {
+				context.addIssue({
+					code: 'custom',
+					message: 'heroImageAlt is required when heroImage is set',
+					path: ['heroImageAlt'],
+				});
+			}
+		}),
 });
 
 export const collections = { blog };

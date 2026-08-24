@@ -2,7 +2,6 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -11,27 +10,37 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<html>
+<html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title="Writing — Coobeeyon Development"
+			description="Notes on software, artificial intelligence, tools, and difficult engineering problems."
+		/>
 	</head>
 	<body>
 		<Header />
 
-		<h1>Blog</h1>
+		<main>
+			<h1>Writing</h1>
 
-		<hr>
+			<hr />
 
-		<ul>
 			{
-				posts.map((post) => (
-					<li>
-						<a href={`/blog/${post.id}/`}>{post.data.title}</a>
-						- <FormattedDate date={post.data.pubDate} />
-					</li>
-				))
+				posts.length === 0 ? (
+					<p>Nothing published yet. I am working on the first piece.</p>
+				) : (
+					<ul>
+						{posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+								{' — '}
+								<FormattedDate date={post.data.pubDate} />
+							</li>
+						))}
+					</ul>
+				)
 			}
-		</ul>
+		</main>
 
 		<Footer />
 	</body>

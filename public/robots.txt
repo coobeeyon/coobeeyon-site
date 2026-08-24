@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coobeeyon.net/sitemap-index.xml

@@ -5,50 +5,82 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<html>
+<html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 
-		<h1>Coobeeyon Development Limited</h1>
-		<p><i>We heart software! You should consider paying us to write some for you!</i>
+		<main>
+			<h1>Coobeeyon Development Limited</h1>
+			<p><i>Useful software for difficult problems.</i></p>
 
-		<hr>
+			<hr />
 
-		<h2>Where are we?</h2>
-		<p>
-			This is the digital headquarters of <b>Michael Daum</b> and Coobeeyon Development Limited.
-			I've always loved making software tools that are useful to talented folks. I did it for a long
-			time at companies for money. And it was good.  But now I do it freelance and I like it a lot!
+			<h2>What I do</h2>
+			<p>
+				Coobeeyon is the consulting practice of <b>Michael Daum</b>, a software
+				developer in Toronto. I work directly with clients on hard product and
+				engineering problems. When a project needs more people, I bring in seasoned
+				specialists I trust.
+			</p>
+			<p>
+				I am especially drawn to rich graphical interfaces, useful artificial
+				intelligence, complex data, and software that has to work in the real world.
+			</p>
 
+			<h2>Selected client work</h2>
+			<h3>Interactive construction planning</h3>
+			<p>
+				A rich browser-based planning system that turns complex construction drawings
+				into structured project data and applies useful AI to difficult planning
+				problems.
+			</p>
+			<h3>Three-dimensional electrical design</h3>
+			<p>
+				Browser-based tools for electrical design, from model conversion and custom
+				section rendering to precision editing of generated conduit routes and visual
+				diagnostics.
+			</p>
 
-		<hr>
+			<h2>Selected experiments &amp; obsessions</h2>
+			<ul>
+				<li>
+					<a href="https://farcaster.xyz/coobeeyon"><b>Stigmergence:</b></a>
+					An autonomous agent exploring generative art and the market.
+				</li>
+				<li>
+					<a href="https://github.com/coobeeyon/Asteroids"><b>Genetic Asteroids:</b></a>
+					Evolution revolution.
+				</li>
+			</ul>
 
-		<h3>Selected Experiments &amp; Obsessions</h3>
-		<ul>
-			<li><a href=https://farcaster.xyz/coobeeyon><b>Capitalist AI Art Bot:</b> A very fun project involving autonomous agents, generative art, and the market. (Blog post coming soon).
-			<li><a href=https://github.com/coobeeyon/Asteroids><b>Genetic Asteroids:</b></a> Evolution Revolution
-		</ul>
+			<h2>Pair-programming tools</h2>
+			<ul>
+				<li>
+					<a href="https://github.com/coobeeyon/litebrite"><b>litebrite:</b></a>
+					A small task tracker for work shared with coding agents.
+				</li>
+				<li>
+					<a href="https://github.com/coobeeyon/mrmouth"><b>mrmouth:</b></a>
+					A supervisor that sends coding agents off to do bounded jobs in containers.
+				</li>
+				<li>
+					<a href="https://github.com/coobeeyon/trk"><b>trk:</b></a>
+					A small project wiki that keeps useful context close to the code.
+				</li>
+			</ul>
 
-		<h3>pAIr Programming Tools</h3>
-		<ul>
-			<li><a href=https://github.com/coobeeyon/litebrite><b>litebrite:</b></a> This is my version of Steve Yegge's <a href=https://github.com/steveyegge/beads>beads</a> tool. It does a lot less and has a lot less code. Works nice for me.
-			<li><a href=https://github.com/coobeeyon/mrmouth><b>mrmouth:</b></a> A little supervisor for sending coding agents off to do bounded jobs in containers.
-			<li><a href=https://github.com/coobeeyon/trk><b>trk:</b></a> A tiny project-memory/wiki tool for keeping useful context close to the code.
-			<li><a href=https://github.com/coobeeyon/ralph_harness><b>ralph_harness</b></a>
-		</ul>
+			<p>
+				Read the <a href="/blog">writing</a>, learn more <a href="/about">about
+				Coobeeyon</a>, or <a href="mailto:mike.daum@coobeeyon.net">send me a note</a>.
+			</p>
 
-		<p>
-			Check out my <a href="/blog">Blog</a> for more technical deep-dives into the madness, or
-			head over to the <a href="/about">About</a> page to see if I'm the right kind of "grown-up"
-			for your next project.
+			<hr />
 
-		<hr>
-
-		<p>
-			Best viewed in Netscape Navigator 3.0 at 800x600 resolution.
+			<p>Best viewed in Netscape Navigator 3.0 at 800x600 resolution.</p>
+		</main>
 
 		<Footer />
 	</body>
