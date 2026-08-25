@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://coobeeyon.net/sitemap-index.xml
+Sitemap: https://coobeeyon.com/sitemap-index.xml
