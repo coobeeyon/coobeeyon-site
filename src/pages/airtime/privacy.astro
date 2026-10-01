@@ -1,0 +1,75 @@
+---
+// Generated from airtime docs/app-store/privacy-policy.md by
+// scripts/render_privacy_page.py; edit the Markdown and regenerate.
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead
+			title="AirTime Privacy Policy"
+			description="How the AirTime iPhone app handles your conversations: analyzed on your iPhone, nothing uploaded."
+		/>
+	</head>
+	<body>
+		<Header />
+
+		<main>
+			<h1>AirTime Privacy Policy</h1>
+
+			<hr />
+
+			<p>Last updated: October 1, 2026</p>
+			<p>AirTime is an iPhone app made by Coobeeyon Development Limited, Toronto, Ontario, Canada ("we"). AirTime shows the shape of a conversation (who spoke when and for how long) without keeping or showing what was said. This policy explains what happens to your information when you use it.</p>
+			<h2>The short version</h2>
+			<ul>
+				<li>AirTime analyzes conversations on your iPhone. It does not upload your recordings, results or labels to us or anyone else.</li>
+				<li>There is no AirTime account. We do not collect your name, email address (unless you email us), contacts, location or any identifier.</li>
+				<li>AirTime has no ads, analytics or tracking.</li>
+				<li>Nothing leaves your iPhone unless you choose to share it with the iOS share sheet.</li>
+			</ul>
+			<h2>What AirTime stores on your iPhone</h2>
+			<p>Everything below stays in AirTime's private storage on your iPhone. It is protected by iOS file encryption while the phone is locked, and it is excluded from iCloud and computer backups. Deleting AirTime deletes all of it.</p>
+			<ul>
+				<li><strong>Recordings while you work.</strong> When you tap Start recording, AirTime uses the microphone until you finish, until a limit is reached, or until AirTime leaves the screen. It never records in the background. A WAV file you import from Files is copied into AirTime; your original file is not changed.</li>
+				<li><strong>Analysis results.</strong> For each conversation you save: its title, date, length, the timing of each anonymous speaker's turns, the speaker labels you type, the estimated measurements, and technical details about how the analysis was run (app and iOS version, model settings).</li>
+				<li><strong>Audio, only if you ask.</strong> By default the audio is deleted as soon as analysis finishes, fails or is cancelled. If you turn on Keep audio for playback, the audio stays with that conversation until you delete the audio or the conversation.</li>
+				<li><strong>Your free conversation.</strong> A small record that your one free conversation has been used, so it is not offered again.</li>
+			</ul>
+			<p>AirTime does not create transcripts, does not recognize words, and does not build voice profiles. Speaker labels apply only to the conversation you label; AirTime does not match voices across conversations.</p>
+			<h2>What leaves your iPhone</h2>
+			<p>Only what you choose to share:</p>
+			<ul>
+				<li><strong>Timing reports.</strong> In a conversation you can prepare a text or JSON report and send it with the iOS share sheet. A text report includes the title, date and length, your speaker labels, each speaker's measurements, and the analysis caveats. A JSON report also includes the conversation's internal ID, the timing of every speaker turn, the number of speakers you chose, and technical details of the analysis (app and iOS versions, model fingerprints and settings). Reports never include audio or spoken words.</li>
+				<li><strong>Quality feedback.</strong> You can prepare a feedback ZIP file and send it with the share sheet, for example to us. It contains anonymous speaker timings, the analysis settings, the app and iOS version, the format and length of the kept audio (if any), and any notes or speaker count you type. It does not contain the title, date or your labels. Original audio is included only if you switch on Include original conversation audio and confirm that the participants agree. Audio contains people's voices and words and is not anonymized.</li>
+			</ul>
+			<p>Where a shared file goes, and who can see it, is up to you and the app or person you share it with. Once shared, a copy is outside AirTime's control. If you send feedback to us, we use it only to investigate and improve AirTime's accuracy, we keep it no longer than needed for that, and we delete it on request.</p>
+			<h2>Purchases</h2>
+			<p>Subscriptions are sold and managed by Apple. AirTime asks the App Store for the price and checks on your iPhone whether your subscription is active; Apple handles payment. We do not receive your name, email address or payment details from Apple. Apple's handling of your purchase is covered by Apple's privacy policy. Restoring a purchase gives back access, not conversations: those stay only on the iPhone that recorded them.</p>
+			<h2>Information Apple may share with us</h2>
+			<p>If you have chosen in your iPhone's settings to share analytics with app developers, Apple may give us aggregated App Analytics (for example, numbers of installs and sessions) and crash reports. These come from Apple, not from AirTime, and never contain your recordings or results.</p>
+			<h2>Links</h2>
+			<p>The Terms of Use and Privacy Policy links in AirTime open in your browser. Those websites have their own policies.</p>
+			<h2>Consent of the people you record</h2>
+			<p>Recording laws differ by place. AirTime asks you to confirm that everyone recorded has agreed before each recording or import. Please only use AirTime with the knowledge and agreement of everyone in the conversation.</p>
+			<h2>Children</h2>
+			<p>AirTime is not directed at children and we do not knowingly collect information from anyone, including children.</p>
+			<h2>Your choices</h2>
+			<ul>
+				<li>Delete a conversation, or only its audio, from the conversation's menu.</li>
+				<li>Delete AirTime to remove everything it stored.</li>
+				<li>Manage or cancel your subscription in your Apple Account settings.</li>
+			</ul>
+			<p>Because we do not hold your AirTime data, we cannot see, export or delete it for you; it is under your control on your iPhone. If you sent us feedback, ask us to delete it using the address below.</p>
+			<h2>Changes</h2>
+			<p>If this policy changes, we will update this page and the date above before the change applies.</p>
+			<h2>Contact</h2>
+			<p>Coobeeyon Development Limited, Toronto, Ontario, Canada<br />
+				Email: <a href="mailto:mike.daum@coobeeyon.net">mike.daum@coobeeyon.net</a></p>
+		</main>
+
+		<Footer />
+	</body>
+</html>
