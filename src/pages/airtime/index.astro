@@ -1,30 +1,62 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
+import AirTimeHead from '../../components/AirTimeHead.astro';
 import AirTimeFooter from '../../components/AirTimeFooter.astro';
 import '../../styles/airtime.css';
 
 // Set to the App Store product URL at launch. While empty, the button reads
 // "Coming soon to the App Store" and is not a link.
 const APP_STORE_URL = '';
+
+const PAGE_URL = new URL('/airtime/', Astro.site).href;
+
+// Search-engine description of the app. installUrl appears once APP_STORE_URL is set.
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareApplication',
+	name: 'AirTime',
+	description:
+		'AirTime shows the shape of a conversation: who spoke when and for how long, estimated on your iPhone, without keeping or showing what was said.',
+	url: PAGE_URL,
+	image: new URL('/airtime/airtime-icon-512.png', Astro.site).href,
+	operatingSystem: 'iOS',
+	applicationCategory: 'LifestyleApplication',
+	...(APP_STORE_URL && { installUrl: APP_STORE_URL, sameAs: APP_STORE_URL }),
+	offers: {
+		'@type': 'Offer',
+		name: 'AirTime Monthly',
+		price: '1.99',
+		priceCurrency: 'USD',
+		priceSpecification: {
+			'@type': 'UnitPriceSpecification',
+			price: '1.99',
+			priceCurrency: 'USD',
+			referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' },
+		},
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Coobeeyon Development Limited',
+		url: 'https://coobeeyon.com/',
+	},
+};
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead
-			title="AirTime: the shape of a conversation"
-			description="Who's doing all the talking? AirTime estimates who spoke when and for how long, entirely on your iPhone. No transcript, no account, nothing uploaded."
-			image="/airtime/airtime-icon-512.png"
+		<AirTimeHead
+			title="AirTime – see who’s doing the talking | Coobeeyon"
+			description="AirTime for iPhone shows who’s doing all the talking: each speaker’s estimated airtime and who spoke when, analyzed on your iPhone. No transcript, no account."
+			jsonLd={jsonLd}
 		/>
-		<link rel="apple-touch-icon" href="/airtime/airtime-icon-192.png" />
 	</head>
 	<body class="airtime">
 		<main>
 			<section class="hero">
 				<div class="identity">
 					<img class="icon" src="/airtime/airtime-icon-192.png" width="96" height="96" alt="" />
-					<img class="wordmark" src="/airtime/airtime-wordmark.png" width="400" height="125" alt="AirTime" />
+					<img class="wordmark" src="/airtime/airtime-wordmark.png" width="400" height="125" alt="" />
 				</div>
-				<h1>Who’s doing all the talking?</h1>
+				<h1><span class="sr-only">AirTime: </span>Who’s doing all the talking?</h1>
 				<p class="lede">
 					AirTime shows the shape of a conversation without keeping or showing what was
 					said. Put your iPhone on the table, record a conversation everyone has agreed
