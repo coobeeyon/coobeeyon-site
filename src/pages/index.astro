@@ -2,12 +2,54 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { HOME_TITLE, HOME_DESCRIPTION } from '../consts';
+
+const site = Astro.site!.href;
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': `${site}#organization`,
+			name: 'Coobeeyon Development Limited',
+			alternateName: 'Coobeeyon',
+			url: site,
+			logo: new URL('/logo.png', site).href,
+			email: 'mike.daum@coobeeyon.net',
+			description: HOME_DESCRIPTION,
+			address: {
+				'@type': 'PostalAddress',
+				addressLocality: 'Toronto',
+				addressRegion: 'ON',
+				addressCountry: 'CA',
+			},
+			founder: { '@id': `${site}#michael-daum` },
+		},
+		{
+			'@type': 'Person',
+			'@id': `${site}#michael-daum`,
+			name: 'Michael Daum',
+			jobTitle: 'Software developer and consultant',
+			url: new URL('/about/', site).href,
+			worksFor: { '@id': `${site}#organization` },
+			homeLocation: { '@type': 'Place', name: 'Toronto, Ontario, Canada' },
+			sameAs: ['https://github.com/coobeeyon'],
+		},
+		{
+			'@type': 'WebSite',
+			'@id': `${site}#website`,
+			name: 'Coobeeyon Development',
+			url: site,
+			publisher: { '@id': `${site}#organization` },
+		},
+	],
+};
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={HOME_TITLE} description={HOME_DESCRIPTION} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 	</head>
 	<body>
 		<Header />

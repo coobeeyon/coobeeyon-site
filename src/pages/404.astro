@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Page not found | Coobeeyon Development" description="This page does not exist." />
+		<meta name="robots" content="noindex" />
+	</head>
+	<body>
+		<Header />
+
+		<main>
+			<h1>Page not found</h1>
+			<p>There is nothing at this address.</p>
+			<p>
+				Try the <a href="/">home page</a>, read <a href="/about">about Coobeeyon</a>,
+				or <a href="mailto:mike.daum@coobeeyon.net">send me a note</a>.
+			</p>
+		</main>
+
+		<Footer />
+	</body>
+</html>
