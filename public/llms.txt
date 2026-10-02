@@ -1,0 +1,27 @@
+# Coobeeyon Development
+
+> Coobeeyon Development Limited is the Toronto software consulting practice of Michael Daum, a hands-on software developer. He works directly with clients on difficult product and engineering problems: rich graphical interfaces, browser 3D, useful AI, complex data, and mature systems that need careful change. Coobeeyon also makes AirTime, an iPhone app that shows who is doing the talking in a conversation.
+
+Coobeeyon is not a conventional agency. Michael leads the work himself and brings in experienced specialists he trusts when a project needs them. Client examples on this site are anonymous until each client approves being named.
+
+Contact: mike.daum@coobeeyon.net
+
+## Pages
+
+- [Home](https://coobeeyon.com/): what Coobeeyon does, selected client work, AirTime, independent experiments, and tools for working with coding agents
+- [Client Work](https://coobeeyon.com/work/): five anonymous client stories (construction planning, 3D electrical design, semiconductor test software, AI-assisted HR, field-service operations), each with the problem, Michael's contribution, and the result
+- [About](https://coobeeyon.com/about/): Michael Daum and how Coobeeyon works
+
+## AirTime
+
+- [AirTime for iPhone](https://coobeeyon.com/airtime/): shows each speaker's estimated share of a conversation and who spoke when, analyzed entirely on the iPhone; no account, no transcript, and recordings are never uploaded
+- [AirTime support](https://coobeeyon.com/airtime/support/)
+- [AirTime privacy policy](https://coobeeyon.com/airtime/privacy/)
+
+## Speaking
+
+- Is C++ Turing Complete?: Michael Daum's 60-minute talk at [Core C++ 2026](https://corecpp.org/), October 20–21, 2026, Tel Aviv
+
+## Optional
+
+- [GitHub: coobeeyon](https://github.com/coobeeyon): Michael's open-source projects, including litebrite (a task tracker shared by people and coding agents), mrmouth (a supervisor that runs coding agents on bounded jobs in containers), and trapperkeeper (a project wiki that keeps decisions close to the code)
