@@ -1,0 +1,144 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Client Work by Michael Daum | Coobeeyon Development"
+			description="Selected software and AI consulting work by Michael Daum, spanning construction planning, 3D design, semiconductor tools, HR software, and operations automation."
+		/>
+	</head>
+	<body>
+		<Header />
+
+		<main class="longform">
+			<h1>Client Work</h1>
+			<p><i>Difficult products, built close to the people who use them.</i></p>
+
+			<hr />
+
+			<p>
+				I work directly with clients from an uncertain problem through design,
+				implementation, and the less glamorous work of making software reliable. These
+				examples are anonymous until each client approves being named.
+			</p>
+
+			<h2>Interactive construction planning</h2>
+			<p>
+				<b>The problem:</b> Residential plans contain a great deal of geometry and intent,
+				but the source drawings were not made to behave like structured product data.
+				People need to compare options, understand a design, and catch problems without
+				becoming experts in the underlying file formats.
+			</p>
+			<p>
+				<b>My contribution:</b> I help build the path from complex drawing files to a rich
+				browser workspace. That has included import and conversion, geometric data
+				models, interactive plan views, option handling, publishing and recovery, and AI
+				features that let people ask useful questions about a project.
+			</p>
+			<p>
+				<b>The result:</b> What began as difficult source material can become a repeatable,
+				inspectable planning workflow. Plans can be brought into the product, explored as
+				structured choices, corrected, and published again without throwing away earlier
+				work.
+			</p>
+
+			<h2>Three-dimensional electrical design</h2>
+			<p>
+				<b>The problem:</b> Generated electrical layouts are only useful when designers can
+				understand them, investigate problems, and make precise changes inside a complex
+				building model.
+			</p>
+			<p>
+				<b>My contribution:</b> I work across the browser-based 3D application, from model
+				loading and conversion through interaction and rendering. I have built and
+				improved navigation, section cuts, transparent caps, outlines, cross-hatching,
+				precise drawing and movement, constraint planes, snapping, orientation cues, and
+				solution diagnostics.
+			</p>
+			<p>
+				<b>The result:</b> Generated conduit routes are not trapped in a static viewer.
+				Designers can inspect them in context, edit them with construction-aware tools,
+				and see clearer feedback about constraints and possible quality problems.
+			</p>
+
+			<h2>Semiconductor test software</h2>
+			<p>
+				<b>The problem:</b> A mature C++ and Python product for semiconductor engineers had
+				to keep evolving without discarding years of code, build infrastructure, and
+				domain knowledge.
+			</p>
+			<p>
+				<b>My contribution:</b> This was an advisory engagement, not implementation
+				ownership. I reviewed architecture and live code with the engineering team,
+				debugged parallel execution, built small examples to test design options, and
+				advised on build and source-control tooling within the product's real constraints.
+			</p>
+			<p>
+				<b>The result:</b> The team kept ownership of production changes while gaining
+				concrete designs, focused prototypes, and an outside technical perspective they
+				could apply to scalability and maintenance work.
+			</p>
+
+			<h2>AI-assisted human resources</h2>
+			<p>
+				<b>The problem:</b> An AI assistant for human-resources work has to reach useful
+				information and take useful actions without confusing companies, people, or
+				provider records. A persuasive answer is not enough; the surrounding system must
+				be trustworthy.
+			</p>
+			<p>
+				<b>My contribution:</b> I helped build document and employee workflows, realistic
+				provider integrations, evaluation tools, and the tenant and identity safeguards
+				that keep one organization's data and actions separate from another's.
+			</p>
+			<p>
+				<b>The result:</b> The accepted work gave the product a broader, testable HR data
+				surface and reliable ways to exercise AI workflows against realistic provider
+				behaviour, while keeping authorization and organizational boundaries explicit.
+			</p>
+
+			<h2>Field-service operations automation</h2>
+			<p>
+				<b>The problem:</b> A field-service company may depend on separate systems for
+				customers, technicians, purchasing, accounting, messages, and documents. The same
+				real-world entity can appear differently in each one, and a careless automation
+				can create duplicates or write to the wrong record.
+			</p>
+			<p>
+				<b>My contribution:</b> I help build the platform and its guarded integrations. The
+				work has included contextual company and people views, automatic imports with a
+				human duplicate-review path, purchasing workflows, accounting synchronization,
+				warranty research, and recovery for interrupted or ambiguous outside-system
+				writes.
+			</p>
+			<p>
+				<b>The result:</b> Shipped workflows now bring operational records into one useful
+				workspace and preserve where each fact came from. Repeats, retries, and possible
+				duplicates are treated as normal product conditions instead of reasons to risk a
+				silent bad write.
+			</p>
+
+			<h2>Additional Work</h2>
+			<h3>Custom mapping for a Squarespace site</h3>
+			<p>
+				As an unpaid favour for a friend, I built a custom Google Maps experience that
+				helped visitors find participating restaurants and drop-off points, extending a
+				Squarespace site beyond its standard tools.
+			</p>
+
+			<hr />
+
+			<p>
+				If you are working on a product with this kind of technical depth, <a
+					href="mailto:mike.daum@coobeeyon.net">send me a note</a
+				>.
+			</p>
+		</main>
+
+		<Footer />
+	</body>
+</html>

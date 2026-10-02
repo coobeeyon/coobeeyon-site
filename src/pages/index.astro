@@ -42,6 +42,24 @@ const jsonLd = {
 			url: site,
 			publisher: { '@id': `${site}#organization` },
 		},
+		{
+			'@type': 'Event',
+			name: 'Is C++ Turing Complete?',
+			description:
+				'A 60-minute Core C++ 2026 talk by Michael Daum: six computational worlds inside C++ go on trial, from runtime code and templates to constant evaluation, CTAD, the preprocessor, and a contracts machine.',
+			startDate: '2026-10-20',
+			endDate: '2026-10-21',
+			eventStatus: 'https://schema.org/EventScheduled',
+			eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+			location: {
+				'@type': 'Place',
+				name: 'Tel Aviv Cinematheque',
+				address: { '@type': 'PostalAddress', addressLocality: 'Tel Aviv', addressCountry: 'IL' },
+			},
+			superEvent: { '@type': 'Event', name: 'Core C++ 2026', url: 'https://corecpp.org/' },
+			performer: { '@id': `${site}#michael-daum` },
+			organizer: { '@type': 'Organization', name: 'Core C++', url: 'https://corecpp.org/' },
+		},
 	],
 };
 ---
@@ -59,6 +77,18 @@ const jsonLd = {
 			<p><i>Useful software for difficult problems.</i></p>
 
 			<hr />
+
+			<section class="talk-callout" aria-labelledby="talk-title">
+				<p class="blink"><b>UPCOMING AT CORE C++ 2026</b></p>
+				<h2 id="talk-title">Is C++ Turing Complete?</h2>
+				<p><b>October 20–21 · Tel Aviv · 60 minutes</b></p>
+				<p>
+					Six different computational worlds inside C++ go on trial—from ordinary
+					runtime code and templates to constant evaluation, CTAD, the preprocessor,
+					and an intentionally strange contracts machine. The main path stays playful;
+					the complete proofs and their limits sit underneath.
+				</p>
+			</section>
 
 			<h2>New: AirTime for iPhone</h2>
 			<p>
@@ -92,15 +122,18 @@ const jsonLd = {
 			<h2>Selected client work</h2>
 			<h3>Interactive construction planning</h3>
 			<p>
-				A rich browser-based planning system that turns complex construction drawings
-				into structured project data and applies useful AI to difficult planning
-				problems.
+				A browser-based planning system that turns complex construction drawings into
+				structured project data, makes plan options explorable, and applies useful AI
+				to difficult planning work.
 			</p>
 			<h3>Three-dimensional electrical design</h3>
 			<p>
-				Browser-based tools for electrical design, from model conversion and custom
-				section rendering to precision editing of generated conduit routes and visual
-				diagnostics.
+				A rich 3D application for electrical design, from model conversion and custom
+				rendering to precise editing of generated conduit routes and visual diagnostics.
+			</p>
+			<p>
+				<a href="/work">See more client work</a>, including software for semiconductor
+				testing, human resources, and field-service operations.
 			</p>
 
 			<h2>Selected experiments &amp; obsessions</h2>
@@ -115,19 +148,20 @@ const jsonLd = {
 				</li>
 			</ul>
 
-			<h2>Pair-programming tools</h2>
+			<h2>Tools for working with coding agents</h2>
 			<ul>
 				<li>
 					<a href="https://github.com/coobeeyon/litebrite"><b>litebrite:</b></a>
-					A small task tracker for work shared with coding agents.
+					A small task tracker that gives people and coding agents one shared view of the work.
 				</li>
 				<li>
 					<a href="https://github.com/coobeeyon/mrmouth"><b>mrmouth:</b></a>
-					A supervisor that sends coding agents off to do bounded jobs in containers.
+					A supervisor that plans bounded jobs, runs coding agents in containers, and checks
+					the result.
 				</li>
 				<li>
 					<a href="https://github.com/coobeeyon/trapperkeeper"><b>trapperkeeper:</b></a>
-					A small project wiki that keeps useful context close to the code.
+					A project wiki that keeps decisions and working knowledge close to the code.
 				</li>
 			</ul>
 

@@ -60,6 +60,45 @@ ol {
   list-style-type: decimal;
 }
 
+.longform {
+  max-width: 76ch;
+}
+
+.talk-callout {
+  max-width: 76ch;
+  margin: 16px 0;
+  padding: 8px 12px;
+  background: #d8d8d8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+}
+
+.talk-callout > :first-child {
+  margin-top: 0;
+}
+
+.talk-callout > :last-child {
+  margin-bottom: 0;
+}
+
+.blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  50% {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink {
+    animation: none;
+  }
+}
+
 blockquote {
   margin-left: 40px;
 }
