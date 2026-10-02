@@ -1,0 +1,344 @@
+---
+import AirTimeHead from '../../components/AirTimeHead.astro';
+import AirTimeFooter from '../../components/AirTimeFooter.astro';
+import '../../styles/airtime.css';
+
+// Set to the App Store product URL at launch. While empty, the button reads
+// "Coming soon to the App Store" and is not a link.
+const APP_STORE_URL = '';
+
+const PAGE_URL = new URL('/airtime/', Astro.site).href;
+
+// Search-engine description of the app. installUrl appears once APP_STORE_URL is set.
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareApplication',
+	name: 'AirTime',
+	description:
+		'AirTime shows the shape of a conversation: who spoke when and for how long, estimated on your iPhone, without keeping or showing what was said.',
+	url: PAGE_URL,
+	image: new URL('/airtime/airtime-icon-512.png', Astro.site).href,
+	operatingSystem: 'iOS',
+	applicationCategory: 'LifestyleApplication',
+	...(APP_STORE_URL && { installUrl: APP_STORE_URL, sameAs: APP_STORE_URL }),
+	offers: {
+		'@type': 'Offer',
+		name: 'AirTime Monthly',
+		price: '1.99',
+		priceCurrency: 'USD',
+		priceSpecification: {
+			'@type': 'UnitPriceSpecification',
+			price: '1.99',
+			priceCurrency: 'USD',
+			referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' },
+		},
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Coobeeyon Development Limited',
+		url: 'https://coobeeyon.com/',
+	},
+};
+---
+
+<html lang="en">
+	<head>
+		<AirTimeHead
+			title="AirTime – see who’s doing the talking | Coobeeyon"
+			description="AirTime for iPhone shows who’s doing all the talking: each speaker’s estimated airtime and who spoke when, analyzed on your iPhone. No transcript, no account."
+			jsonLd={jsonLd}
+		/>
+	</head>
+	<body class="airtime">
+		<main>
+			<section class="hero">
+				<div class="identity">
+					<img class="icon" src="/airtime/airtime-icon-192.png" width="96" height="96" alt="" />
+					<img class="wordmark" src="/airtime/airtime-wordmark.png" width="400" height="125" alt="" />
+				</div>
+				<h1><span class="sr-only">AirTime: </span>Who’s doing all the talking?</h1>
+				<p class="lede">
+					AirTime shows the shape of a conversation without keeping or showing what was
+					said. Put your iPhone on the table, record a conversation everyone has agreed
+					to, and see who spoke when and for how long.
+				</p>
+				{APP_STORE_URL
+					? <a class="cta" href={APP_STORE_URL}>Get AirTime on the App Store</a>
+					: <span class="cta cta-pending">Coming soon to the App Store</span>}
+				<p class="fine">For iPhone. Your first 5-minute conversation is free.</p>
+			</section>
+
+			<section>
+				<h2>What you see</h2>
+				<div class="shots" tabindex="0" aria-label="App screenshots">
+					<figure>
+						<img src="/airtime/screenshot-02-estimated-airtime.jpg" width="600" height="1304" loading="lazy"
+							alt="AirTime result for a family dinner: Alex 57.4%, Sam 13.4%, Robin 29.2% estimated airtime, each with total speaking time." />
+						<figcaption>Each speaker’s estimated share</figcaption>
+					</figure>
+					<figure>
+						<img src="/airtime/screenshot-01-library.jpg" width="600" height="1304" loading="lazy"
+							alt="AirTime conversation list with a New conversation button and three saved conversations, each with a coloured airtime bar." />
+						<figcaption>Your conversations, at a glance</figcaption>
+					</figure>
+					<figure>
+						<img src="/airtime/screenshot-06-on-device-analysis.jpg" width="600" height="1304" loading="lazy"
+							alt="AirTime analyzing a recording, labelled Local: estimating speakers entirely on this iPhone, works in airplane mode." />
+						<figcaption>Analyzed on your iPhone</figcaption>
+					</figure>
+				</div>
+				<ul class="ticks">
+					<li>Each speaker’s estimated share of the airtime</li>
+					<li>A timeline of who spoke when, including moments when two voices overlapped</li>
+					<li>Turns, average turn, longest solo span, silence and a balance figure</li>
+					<li>Two conversations side by side, with speakers you match yourself</li>
+					<li>Optional playback: keep the audio and tap any segment to hear it</li>
+				</ul>
+			</section>
+
+			<section class="panel">
+				<h2>Private by design</h2>
+				<ul class="ticks">
+					<li>Analysis runs entirely on your iPhone and works in airplane mode</li>
+					<li>No account and no sign-up</li>
+					<li>
+						AirTime never uploads your recordings or results. Audio is deleted after
+						analysis unless you choose to keep it for playback
+					</li>
+					<li>No transcript and no voice profiles</li>
+					<li>You decide what to share, with the iOS share sheet</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>A neutral mirror</h2>
+				<p>
+					AirTime reports estimates, not verdicts. Overlap isn’t proof of an
+					interruption, and an even split isn’t a score to win. Similar voices,
+					background noise and short turns can be misattributed.
+				</p>
+			</section>
+
+			<section>
+				<h2>How it works</h2>
+				<ol class="steps">
+					<li>Confirm that everyone being recorded has agreed.</li>
+					<li>Record up to 30 minutes, or import a WAV file.</li>
+					<li>Choose how many people spoke (1 to 10).</li>
+					<li>AirTime analyzes on your iPhone and saves the result.</li>
+				</ol>
+			</section>
+
+			<section class="panel price">
+				<h2>Price</h2>
+				<p>
+					<strong>Your first conversation, up to 5 minutes, is free.</strong> It only
+					counts once a result with detected speech is saved.
+				</p>
+				<p>
+					After that, <strong>AirTime Monthly</strong> unlocks unlimited conversations,
+					each up to 30 minutes, for <strong>$1.99 USD a month</strong>. Eligible new
+					subscribers get a 7-day free trial. Prices vary by country; your local price
+					is shown in the App Store before you subscribe.
+				</p>
+				<p>
+					The subscription renews monthly until you cancel in your Apple Account
+					settings. Saved conversations stay available if you cancel.
+				</p>
+			</section>
+
+		</main>
+
+		<AirTimeFooter />
+	</body>
+</html>
+
+<style>
+	main {
+		--cream: #fff5e3;
+		--turquoise: #39bfb1;
+		--coral: #f27668;
+		--butter: #f6d96b;
+		--ink: #243745;
+		--deep-ink: #172b38;
+		--muted-ink: #52656b;
+		--coral-ink: #a94436;
+		max-width: 72rem;
+		margin: 0 auto;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+		font-size: 17px;
+		line-height: 1.5;
+		color: var(--ink);
+	}
+
+	h1,
+	h2 {
+		font-family: Georgia, 'Times New Roman', serif;
+		font-weight: bold;
+		color: var(--deep-ink);
+	}
+
+	h1 {
+		font-size: clamp(2.25rem, 7vw, 4rem);
+		line-height: 1.05;
+		margin: 24px 0 16px;
+	}
+
+	h2 {
+		font-size: 1.6rem;
+		line-height: 1.25;
+		margin: 0 0 16px;
+	}
+
+	section {
+		margin: 48px 0;
+	}
+
+	p,
+	li {
+		max-width: 34rem;
+	}
+
+	img {
+		border: none;
+	}
+
+	a:link,
+	a:visited {
+		color: #14766d;
+	}
+
+	.hero {
+		margin-top: 24px;
+	}
+
+	.identity {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	.icon {
+		width: 96px;
+		height: 96px;
+		border-radius: 22px;
+		box-shadow: 0 0 0 2px #e6d9bf;
+	}
+
+	.wordmark {
+		width: min(400px, 60vw);
+		height: auto;
+	}
+
+	.lede {
+		font-size: 1.2rem;
+	}
+
+	.cta {
+		display: inline-block;
+		min-height: 48px;
+		box-sizing: border-box;
+		padding: 12px 28px;
+		border-radius: 999px;
+		border: 2px solid var(--deep-ink);
+		background: var(--coral);
+		color: var(--deep-ink);
+		font-weight: 600;
+		text-decoration: none;
+		margin: 8px 0;
+	}
+
+	a.cta:link,
+	a.cta:visited {
+		color: var(--deep-ink);
+	}
+
+	a.cta:focus-visible {
+		outline: 3px solid var(--deep-ink);
+		outline-offset: 3px;
+	}
+
+	.cta-pending {
+		background: var(--butter);
+	}
+
+	.fine {
+		font-size: 0.85rem;
+		color: var(--muted-ink);
+	}
+
+	.shots {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 24px;
+		max-width: 56rem;
+		margin-bottom: 24px;
+	}
+
+	.shots figure {
+		margin: 0;
+	}
+
+	.shots img {
+		width: 100%;
+		height: auto;
+		border-radius: 24px;
+		box-shadow: 0 0 0 2px var(--deep-ink);
+	}
+
+	figcaption {
+		font-size: 0.9rem;
+		color: var(--muted-ink);
+		text-align: center;
+		margin-top: 8px;
+	}
+
+	.ticks {
+		padding-left: 1.25em;
+	}
+
+	.ticks li::marker {
+		color: var(--turquoise);
+	}
+
+	.steps li::marker {
+		color: var(--coral-ink);
+		font-weight: bold;
+	}
+
+	.panel {
+		background: #ffffff;
+		border: 2px solid var(--deep-ink);
+		border-radius: 24px;
+		padding: 24px;
+		max-width: 40rem;
+	}
+
+	.price {
+		border-color: var(--coral);
+		box-shadow: 6px 6px 0 var(--coral);
+	}
+
+
+	@media (max-width: 640px) {
+		/* Swipeable row; the next screenshot peeks in at the edge. */
+		.shots {
+			display: flex;
+			gap: 16px;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			padding: 4px 4px 12px;
+			margin: 0 -4px 16px;
+		}
+
+		.shots figure {
+			flex: 0 0 68%;
+			scroll-snap-align: start;
+		}
+
+		.panel {
+			padding: 16px;
+		}
+	}
+</style>

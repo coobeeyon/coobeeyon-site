@@ -1,0 +1,27 @@
+---
+// Head tags shared by the /airtime/ pages: AirTime favicon, touch icon and share card.
+import BaseHead from './BaseHead.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	/** Structured data for search engines, emitted as JSON-LD. */
+	jsonLd?: Record<string, unknown>;
+}
+
+const { title, description, jsonLd } = Astro.props;
+---
+
+<BaseHead
+	title={title}
+	description={description}
+	image="/airtime/airtime-share-1200x630.jpg"
+	imageAlt="AirTime app icon and wordmark: Who’s doing all the talking?"
+	icon="/airtime/airtime-favicon-48.png"
+	card="summary_large_image"
+/>
+<meta property="og:site_name" content="AirTime" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<link rel="apple-touch-icon" href="/airtime/airtime-icon-180.png" />
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}

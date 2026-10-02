@@ -1,18 +1,19 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import AirTimeHead from '../../components/AirTimeHead.astro';
+import AirTimeHeader from '../../components/AirTimeHeader.astro';
+import AirTimeFooter from '../../components/AirTimeFooter.astro';
+import '../../styles/airtime.css';
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead
-			title="AirTime Support"
+		<AirTimeHead
+			title="AirTime Support | Coobeeyon"
 			description="Help and contact for the AirTime iPhone app by Coobeeyon Development."
 		/>
 	</head>
-	<body>
-		<Header />
+	<body class="airtime">
+		<AirTimeHeader />
 
 		<main>
 			<h1>AirTime Support</h1>
@@ -64,6 +65,6 @@ import Footer from '../../components/Footer.astro';
 			</p>
 		</main>
 
-		<Footer />
+		<AirTimeFooter />
 	</body>
 </html>
