@@ -4,3 +4,25 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Images keep their names across deploys, so let browsers reuse them for a day
+# instead of re-checking on every page. HTML keeps Netlify's revalidating default.
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
