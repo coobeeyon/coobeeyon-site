@@ -20,7 +20,7 @@ Contact: mike.daum@coobeeyon.net
 
 ## Speaking
 
-- Is C++ Turing Complete?: Michael Daum's 60-minute talk at [Core C++ 2026](https://corecpp.org/), October 20–21, 2026, Tel Aviv
+- Is C++ Turing Complete?: Michael Daum's 60-minute talk, given at [Core C++ 2026](https://corecpp.org/) in Tel Aviv on October 21, 2026
 
 ## Optional
 
